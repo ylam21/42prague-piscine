@@ -1,51 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omaly <omaly@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/12 09:21:42 by omaly             #+#    #+#             */
-/*   Updated: 2025/02/12 09:21:53 by omaly            ###   ########.fr       */
+/*   Created: 2025/02/05 15:15:44 by omaly             #+#    #+#             */
+/*   Updated: 2025/02/12 09:20:08 by omaly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putnbr(int nb)
+void	ft_putchar(char c)
 {
-	char	buffer[11];
-	int		irr;
-
-	irr = 0;
-	if (nb == 0)
-	{
-		write(1, "0", 1);
-		return ;
-	}
-	else if (nb < 0)
-	{
-		write(1, "-", 1);
-		if (nb == -2147483648)
-		{
-			write(1, "2147483648", 10);
-			return ;
-		}
-		nb = -nb;
-	}
-	while (nb > 0)
-	{
-		buffer[irr] = (nb % 10) + 48;
-		nb = nb / 10;
-		irr++;
-	}
-	while (irr > 0)
-	{
-		write(1, &buffer[--irr], 1);
-	}
+	write(1, &c, 1);
 }
 
-// int main(void){
-//   ft_putnbr(-2);
-//   return (0);
+// int	main(void)
+// {
+// 	char	ch;
+
+// 	ch = 'a';
+// 	ft_putchar(ch);
+// 	return (0);
 // }
