@@ -6,11 +6,28 @@
 /*   By: omaly <omaly@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 09:21:42 by omaly             #+#    #+#             */
-/*   Updated: 2025/02/12 09:21:53 by omaly            ###   ########.fr       */
+/*   Updated: 2025/02/13 16:35:28 by omaly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+
+void	write_positive(int *buffer, int number)
+{
+	int	irr;
+
+	irr = 0;
+	while (number > 0)
+	{
+		buffer[irr] = (number % 10) + 48;
+		number = number / 10;
+		irr++;
+	}
+	while (irr > 0)
+	{
+		write(1, &buffer[--irr], 1);
+	}
+}
 
 void	ft_putnbr(int nb)
 {
@@ -33,16 +50,7 @@ void	ft_putnbr(int nb)
 		}
 		nb = -nb;
 	}
-	while (nb > 0)
-	{
-		buffer[irr] = (nb % 10) + 48;
-		nb = nb / 10;
-		irr++;
-	}
-	while (irr > 0)
-	{
-		write(1, &buffer[--irr], 1);
-	}
+	write_positive(buffer, nb);
 }
 
 // int main(void){
