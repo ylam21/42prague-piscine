@@ -1,8 +1,28 @@
-char *ft_strncpy(char *dest, char *src, unsigned int n) {
-  int counter = 0;
-  while (counter != n) {
-    dest[counter] = src[counter];
-    ++counter;
-  }
-  return dest;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: omaly <omaly@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/12 20:58:58 by omaly             #+#    #+#             */
+/*   Updated: 2025/02/13 14:41:27 by omaly            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (src[i] != '\0' && i < n)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	while (i < n)
+	{
+		dest[i++] = '\0';
+	}
+	return (dest);
 }

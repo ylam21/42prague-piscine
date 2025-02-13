@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omaly <omaly@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/13 10:56:17 by omaly             #+#    #+#             */
-/*   Updated: 2025/02/13 14:38:33 by omaly            ###   ########.fr       */
+/*   Created: 2025/02/13 11:59:19 by omaly             #+#    #+#             */
+/*   Updated: 2025/02/13 13:05:34 by omaly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_str_is_printable(char *str)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	int	irr;
+	unsigned int	i;
 
-	irr = 0;
-	while (str[irr] != '\0')
+	i = 0;
+	while (i < (size-1))
 	{
-		if (!( 32<= str[irr] && str[irr] <= 126))
-			return (0);
-		irr++;
+		dest[i]=src[i];
+		i++;
 	}
-	return (1);
+	int len = 0;
+	while (src[len]) {
+		++len;
+	}
+	return (len);
 }
-
-// int	main(void)
-// {
-// 	int	res;
-
-// 	res = ft_str_is_printable("AAAAAAADDDDD");
-// 	printf("%d\n", res);
-// 	return (0);
-// }
