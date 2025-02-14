@@ -12,8 +12,9 @@
 
 #include <unistd.h>
 
-void	write_positive(int *buffer, int number)
+void	write_positive(int number)
 {
+	char	buffer[11];
 	int	irr;
 
 	irr = 0;
@@ -31,7 +32,7 @@ void	write_positive(int *buffer, int number)
 
 void	ft_putnbr(int nb)
 {
-	char	buffer[11];
+	
 	int		irr;
 
 	irr = 0;
@@ -50,7 +51,7 @@ void	ft_putnbr(int nb)
 		}
 		nb = -nb;
 	}
-	write_positive(buffer, nb);
+	write_positive(nb);
 }
 
 // int main(void){
