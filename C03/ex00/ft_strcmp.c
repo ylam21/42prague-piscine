@@ -1,12 +1,27 @@
-int ft_strcmp(char *str1, char *str2) {
-int i = 0;
-while (str1[i] != '\0' && str2[i] != '\0') {
-  if (str1[i] == str2[i])
-    i++;
-  else
-    return (str1[i] - str2[i]);
-}
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: omaly <omaly@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/18 14:46:51 by omaly             #+#    #+#             */
+/*   Updated: 2025/02/18 14:46:54 by omaly            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-return (str1[i] - str2[i]);
-}
 
+int	ft_strcmp(char *str1, char *str2)
+{
+	int	i;
+
+	i = 0;
+	while (str1[i] != '\0' && str2[i] != '\0')
+	{
+		if (str1[i] == str2[i])
+			i++;
+		else
+			return (str1[i] - str2[i]);
+	}
+	return (str1[i] - str2[i]);
+}
