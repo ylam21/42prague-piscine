@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omaly <omaly@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/18 14:47:00 by omaly             #+#    #+#             */
-/*   Updated: 2025/02/18 14:47:02 by omaly            ###   ########.fr       */
+/*   Created: 2025/02/19 16:30:10 by omaly             #+#    #+#             */
+/*   Updated: 2025/02/19 16:37:21 by omaly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+#include <stdio.h>
+
+int	ft_fibonacci(int index){
+	int acc = 1;
+	if (index == 0)
+		return 0;
+	if (index == 1)
+
+	return acc + ft_fibonacci(index-1);
+}
+
+int	main(void)
 {
-	unsigned int i = 0;
-	if (n == 0)
-		return (0);
-	while (i < n && s1[i] != '\0' && s2[i] != '\0')
-	{
-		if (s1[i] == s2[i])
-			i++;
-		else
-			return (s1[i] - s2[i]);
-	}
-	if (i < n)
-		return (s1[i] - s2[i]);
 	return (0);
 }

@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omaly <omaly@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/18 14:47:00 by omaly             #+#    #+#             */
-/*   Updated: 2025/02/18 14:47:02 by omaly            ###   ########.fr       */
+/*   Created: 2025/02/18 17:29:32 by omaly             #+#    #+#             */
+/*   Updated: 2025/02/18 17:57:11 by omaly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+#include <unistd.h>
+
+void	ft_putstr(char *str)
 {
-	unsigned int i = 0;
-	if (n == 0)
-		return (0);
-	while (i < n && s1[i] != '\0' && s2[i] != '\0')
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
 	{
-		if (s1[i] == s2[i])
-			i++;
-		else
-			return (s1[i] - s2[i]);
+		write(1, &str[i++], 1);
 	}
-	if (i < n)
-		return (s1[i] - s2[i]);
-	return (0);
 }
+
+// int main(void) {
+// 	char *string = "Try me";
+
+// 	ft_putstr(string);
+// 	return (0);
+// }
